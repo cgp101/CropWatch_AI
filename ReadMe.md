@@ -122,17 +122,22 @@ Random search across 5 trials testing:
 
 The app implements Reinforcement Learning from Human Feedback with:
 
-**Adaptive Thresholds:**
+**Adaptive Thresholds (Automated):**
 - Per-class confidence thresholds (50%-90% bounds)
+- Real-time adjustment based on feedback
 - Graduated penalty system:
   - ✅ Correct: threshold × 0.95
   - ⚡ Top-5 match: threshold × 1.03
   - ❌ Wrong: threshold × 1.15
 
-**Dynamic Ensemble Weighting:**
+**Dynamic Ensemble Weighting (Automated):**
 - Real-time accuracy tracking per model
 - Automatic weight adjustment favoring better performer
-- Weight history visualization
+
+**Feedback Collection (Logged for future retraining):**
+- Human corrections saved to `feedback_log.csv`
+- Threshold history saved to `learned_thresholds.json`
+- Model retraining done offline with collected data
 
 ---
 
@@ -240,12 +245,11 @@ AZURE_STORAGE_CONNECTION_STRING=your_connection_string
 
 ## Future Enhancements
 
-Potential additions if extended:
-- LangGraph workflow for multi-step reasoning
-- Automated evaluation pipeline with drift detection
-- Batch inference for large-scale farm assessments
-- Mobile-friendly PWA version
-- Integration with provincial crop insurance APIs
+- **Automated Retraining Pipeline:** Azure Data Factory / ML Service pipeline to automatically retrain models using collected feedback data
+- **Offline Evaluation Suite:** Automated testing on held-out data with drift detection
+- **CI/CD for Models:** Automated model validation and deployment
+- **Mobile PWA:** Mobile-friendly version for field use
+- **Provincial API Integration:** Connect to crop insurance and weather APIs
 
 ---
 
@@ -261,3 +265,28 @@ MIT
 - Canadian Food Inspection Agency (CFIA)
 - Canadian Council of Forest Ministers (CCFM)
 - Grain Farmers of Ontario (GFO)
+
+## APP Screenshots
+
+### Home Page 
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/3de19939-c3ce-447a-a205-b3dde56d12ec" />
+
+### Detection 
+
+**Correct Detection:** 
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/ec5c8704-a508-4f9f-a408-667cefa9c613" />
+
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/bd559cb8-0645-48e4-917f-2c4038c7b63f" />
+
+**Wrong Detection:**
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/63fbbf3e-25ca-4f18-ac7c-cd49ca452aa0" />
+
+### Analytics Section 
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/065c126e-49f6-41bc-b310-7410ff163822" />
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/f4a6d4c1-7f2d-48ec-8d50-5fbde23090a6" />
+
+
+### Chatbot
+<img width="1440" height="764" alt="image" src="https://github.com/user-attachments/assets/3d2fa90c-41cc-47f6-a1dc-0e2a11138487" />
+
+
