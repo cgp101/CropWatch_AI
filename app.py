@@ -16,7 +16,7 @@ load_dotenv()
 
 # Page config
 st.set_page_config(
-    page_title="Pest Detection RLHF + LLM",
+    page_title="CropWatch AI",
     page_icon="🐛",
     layout="wide"
 )
@@ -268,10 +268,10 @@ def get_llm_response(prompt, detected_pest=None):
         return f"⚠️ Azure OpenAI Error: {str(e)}\n\nCheck your .env file has AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_KEY set correctly."
 
 # Main UI
-st.title("🐛 Agricultural Pest Detection with RLHF + LLM")
+st.title("🐛 Crop Pest Detection with RLHF + LLM")
 st.markdown("### Canadian Pest Management & Risk Assessment System with Adaptive Learning")
 
-tab1, tab2, tab3 = st.tabs(["🔍 Detection", "📈 Analytics", "💬 Pest Expert Chat"])
+tab1, tab2, tab3 = st.tabs(["🔍 Detection", "📈 Analytics", "💬 Pest Chat"])
 
 with tab1:
     col1, col2 = st.columns(2)
@@ -495,7 +495,7 @@ with st.sidebar:
     if total_feedback > 0:
         accuracy = (st.session_state.feedback_log['was_correct'].sum() / total_feedback) * 100
         top5_acc = (st.session_state.feedback_log['in_top_5'].sum() / total_feedback) * 100
-        st.metric("Exact Match Accuracy", f"{accuracy:.1f}%")
+        st.metric("Exact Match Accuracy",f"{accuracy:.1f}%")
         st.metric("Top-5 Accuracy", f"{top5_acc:.1f}%")
     st.metric("Total Reviews", total_feedback)
     st.markdown("---")
@@ -503,17 +503,9 @@ with st.sidebar:
     st.progress(st.session_state.ensemble_weights['b0'], text=f"B0: {st.session_state.ensemble_weights['b0']:.1%}")
     st.progress(st.session_state.ensemble_weights['b4'], text=f"B4: {st.session_state.ensemble_weights['b4']:.1%}")
     st.markdown("---")
-    st.subheader("Current Thresholds")
-    for pest in PEST_CLASSES:
-        threshold = st.session_state.thresholds[pest]
-        risk = RISK_SCORES[pest]
-        color = "🔴" if risk > 0.7 else "🟡" if risk > 0.4 else "🟢"
-        st.text(f"{color} {pest}: {threshold:.2%}")
-    st.markdown("---")
     st.subheader("📥 Export Data")
     st.download_button("Download Thresholds", data=json.dumps(st.session_state.thresholds, indent=2), file_name="learned_thresholds.json", mime="application/json")
     if len(st.session_state.feedback_log) > 0:
         st.download_button("Download Feedback Log", data=st.session_state.feedback_log.to_csv(index=False), file_name="feedback_log.csv", mime="text/csv")
-
 st.markdown("---")
 st.caption("🏦 Adaptive Pest Detection System - EfficientNet Ensemble + RLHF + GPT-4.1-nano Fine-tuned")
