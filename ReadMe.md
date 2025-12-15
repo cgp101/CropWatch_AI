@@ -1,4 +1,4 @@
-# CropWatch-AI
+# CropWatch-AI 🌾
 
 **Canadian Agricultural Pest Detection & Risk Assessment System**
 
@@ -158,6 +158,15 @@ CropWatch_AI/
 ├── Image_proces/
 │   ├── img_aug.py
 │   └── img_cleaner.py
+├── LLM_Knowledgebase/
+│   ├── CropPests-reduced.pdf
+│   ├── Pest Risk Analysis Framework.pdf
+│   └── Sustainable Agriculture Strategy.pdf
+├── Models/
+│   ├── efficientnet_b0.onnx
+│   ├── efficientnet_b0.onnx.data
+│   ├── efficientnet_b4.onnx
+│   └── efficientnet_b4.onnx.data
 ├── NN_development/
 │   ├── custom_built_nn.py
 │   ├── dataloaders.py
@@ -171,19 +180,17 @@ CropWatch_AI/
 ├── system_prompt/
 │   ├── canadian_agri_pest_training.jsonl
 │   └── canadian_agri_pest_validation.jsonl
-├── models/
-│   ├── efficientnet_b0.onnx
-│   └── efficientnet_b4.onnx
-├── app.py                        # Main Streamlit application
+├── app.py
 ├── app_health_check.py
 ├── analysis.py
 ├── data_import.py
 ├── conf_matrix.ipynb
 ├── croppest-classifier.ipynb
-├── feedback_log.csv              # Auto-generated from RLHF
-├── learned_thresholds.json       # Auto-generated from RLHF
+├── feedback_log.csv
+├── learned_thresholds.json
 ├── requirements.txt
-└── .env.example
+├── .env.example
+└── .gitignore
 ```
 
 ---
