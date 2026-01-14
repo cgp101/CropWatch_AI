@@ -2,7 +2,7 @@
 
 **Canadian Agricultural Pest Detection & Risk Assessment System**
 
-An end-to-end ML system combining computer vision for pest identification with a fine-tuned LLM for risk assessment, built for agricultural guidelines (
+An end-to-end ML system combining computer vision for pest identification with a fine-tuned LLM for risk assessment, built for agricultural guidelines
 
 ---
 
