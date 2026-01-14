@@ -19,7 +19,7 @@ This system enables farmers to identify crop pests and receive actionable risk a
 ## Features
 
 - 12-class pest classification with ensemble inference
-- Adaptive confidence thresholds via RLHF
+- Adaptive confidence thresholds via HITL
 - Dynamic ensemble weighting based on feedback
 - LLM-powered pest management recommendations
 - Agricultural loan risk scoring
@@ -38,7 +38,7 @@ This system enables farmers to identify crop pests and receive actionable risk a
 │                 INFERENCE LAYER                             │
 │    EfficientNet-B0 (224×224) + B4 (380×380) Ensemble       │
 ├─────────────────────────────────────────────────────────────┤
-│                    RLHF LAYER                               │
+│                    HITL LAYER                               │
 │   Adaptive Thresholds + Dynamic Ensemble Weights            │
 ├─────────────────────────────────────────────────────────────┤
 │                    LLM LAYER                                │
