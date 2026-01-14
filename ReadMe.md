@@ -118,13 +118,13 @@ Random search across 5 trials testing:
 
 ---
 
-## RLHF System
+## Human-in-the-Loop Adaptive Learning System (HITL)
 
-The app implements Reinforcement Learning from Human Feedback with:
+The app implements a feedback-driven adaptive system with:
 
-**Adaptive Thresholds (Automated):**
+**Adaptive Thresholds:**
 - Per-class confidence thresholds (50%-90% bounds)
-- Real-time adjustment based on feedback
+- Automated adjustment based on feedback
 - Graduated penalty system:
   - ✅ Correct: threshold × 0.95
   - ⚡ Top-5 match: threshold × 1.03
@@ -132,12 +132,14 @@ The app implements Reinforcement Learning from Human Feedback with:
 
 **Dynamic Ensemble Weighting (Automated):**
 - Real-time accuracy tracking per model
-- Automatic weight adjustment favoring better performer
+- Automatic weight adjustment favours the better performer
+- Enables continuous improvement without full model retraining
 
 **Feedback Collection (Logged for future retraining):**
 - Human corrections saved to `feedback_log.csv`
 - Threshold history saved to `learned_thresholds.json`
 - Model retraining done offline with collected data
+- Foundation for future automated model retraining pipeline
 
 ---
 
