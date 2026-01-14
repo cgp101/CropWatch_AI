@@ -2,13 +2,13 @@
 
 **Canadian Agricultural Pest Detection & Risk Assessment System**
 
-An end-to-end ML system combining computer vision for pest identification with a fine-tuned LLM for risk assessment, built for Canadian agricultural guidelines (CFIA, CCFM, GFO, Agriculture Canada).
+An end-to-end ML system combining computer vision for pest identification with a fine-tuned LLM for risk assessment, built for agricultural guidelines (
 
 ---
 
 ## Project Overview
 
-This system helps Canadian farmers identify crop pests and receive actionable risk assessments with economic thresholds, treatment recommendations, and loan risk scoring.
+This system enables farmers to identify crop pests and receive actionable risk assessments, including economic thresholds, treatment recommendations, and loan risk scoring.
 
 **Two main components:**
 1. **Pest Classification** — EfficientNet ensemble (90.84% accuracy)
