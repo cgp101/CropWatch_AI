@@ -36,16 +36,16 @@ This system enables farmers to identify crop pests and receive actionable risk a
 │ Detection   │ Analytics       │ LLM Chat                    │
 ├─────────────┴─────────────────┴─────────────────────────────┤
 │                 INFERENCE LAYER                             │
-│    EfficientNet-B0 (224×224) + B4 (380×380) Ensemble       │
+│    EfficientNet-B0 (224×224) + B4 (380×380) Ensemble        │
 ├─────────────────────────────────────────────────────────────┤
 │                    HITL LAYER                               │
 │   Adaptive Thresholds + Dynamic Ensemble Weights            │
 ├─────────────────────────────────────────────────────────────┤
 │                    LLM LAYER                                │
-│        Fine-tuned GPT-4.1-nano (Azure AI Foundry)          │
+│        Fine-tuned GPT-4.1-nano (Azure AI Foundry)           │
 ├─────────────────────────────────────────────────────────────┤
 │                  AZURE SERVICES                             │
-│     Azure OpenAI  |  Azure Blob Storage  |  Canada Central │
+│     Azure OpenAI  |  Azure Blob Storage  |  Canada Central  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
